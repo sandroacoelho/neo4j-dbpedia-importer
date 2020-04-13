@@ -44,6 +44,11 @@ ADD config/hdfs-site.xml /tmp/hadoop-etc/hdfs-site.xml
 
 RUN mv /tmp/hadoop-etc/* /opt/hadoop/etc/hadoop/
 
+
+RUN git clone https://github.com/sandroacoelho/neo4j-dbpedia-importer && \
+    cd neo4j-dbpedia-importer && \
+    mvn clean install
+
 # Expose SSHD
 EXPOSE 22
 
