@@ -4,7 +4,7 @@ WORKDIR /root/
 RUN echo '' > /etc/hosts
 
 # Install package with add-apt-repository
-RUN apt-get update && apt-get install -y software-properties-common
+RUN apt-get update && apt-get install -y software-properties-common net-tools
 
 # Install SSH server and Zookeeper
 RUN apt-get install -y openssh-server zookeeperd git maven
