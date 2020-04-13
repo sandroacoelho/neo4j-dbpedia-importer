@@ -28,15 +28,15 @@ object DBpediaImporter {
     .set("driver-memory", prop.getProperty("driver.memory"))
     .set("spark.executor.memory", prop.getProperty("spark.executor.memory"))
     .set("spark.driver.memory", prop.getProperty("spark.driver.memory"))
+    .set("fs.hdfs.impl", classOf[DistributedFileSystem].getName)
+    .set("fs.file.impl", classOf[LocalFileSystem].getName)
 
   val sc = new SparkContext(conf)
 
 
+
   def main(args: Array[String]) {
 
-    val conf = new Configuration
-    conf.set("fs.hdfs.impl", classOf[DistributedFileSystem].getName)
-    conf.set("fs.file.impl", classOf[LocalFileSystem].getName)
 
     // Import the page nodes and link graph
     val pageIndex: collection.Map[String, Long] = importPageNodesAndLinks()
