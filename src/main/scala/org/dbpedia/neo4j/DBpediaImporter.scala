@@ -34,7 +34,6 @@ object DBpediaImporter {
   val sc = new SparkContext(conf)
 
 
-
   def main(args: Array[String]) {
 
 
