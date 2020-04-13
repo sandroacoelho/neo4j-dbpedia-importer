@@ -29,7 +29,7 @@ RUN sed -ri 's/session[[:blank:]]+required[[:blank:]]+pam_loginuid.so/session op
 # Deploy and setup file permissions
 RUN tar xvfz /root/hadoop-2.2.0.tar.gz -C /opt && \
   ln -s /opt/hadoop-2.2.0 /opt/hadoop && \
-  chown -R root:root /opt/hadoop-2.10.0 && \
+  chown -R root:root /opt/hadoop-2.2.0 && \
   mkdir /opt/hadoop-2.2.0/logs && \
   chown -R hduser:hadoop /opt/hadoop-2.2.0/logs
 
