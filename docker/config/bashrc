@@ -1,3 +1,4 @@
+export JAVA_HOME=/usr/local/openjdk-8
 export HADOOP_PREFIX=/opt/hadoop
 export HADOOP_COMMON_HOME=$HADOOP_PREFIX
 export HADOOP_HDFS_HOME=$HADOOP_PREFIX
