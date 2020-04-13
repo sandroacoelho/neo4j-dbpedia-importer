@@ -1,3 +1,7 @@
+package org.dbpedia.neo4j
+
+import java.util.Properties
+
 /**
  * Copyright (C) 2014 Kenny Bastani
  *
@@ -13,7 +17,10 @@
  */
 object Configuration {
 
-  def HDFS_HOST: String = "hdfs://localhost:9000/"
+  val prop = new Properties()
+  prop.load(getClass.getResourceAsStream("/importer.properties"))
+
+  def HDFS_HOST: String = prop.getProperty("hadoop.hdfs.host")
 
   def PRIMARY_TOPIC_URL: String = "<http://xmlns.com/foaf/0.1/primaryTopic>"
 
