@@ -1,4 +1,3 @@
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle/
 export HADOOP_PREFIX=/opt/hadoop
 export HADOOP_COMMON_HOME=$HADOOP_PREFIX
 export HADOOP_HDFS_HOME=$HADOOP_PREFIX
