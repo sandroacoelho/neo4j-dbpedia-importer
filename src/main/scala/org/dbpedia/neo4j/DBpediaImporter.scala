@@ -3,6 +3,9 @@ package org.dbpedia.neo4j
 import java.net.URLDecoder
 import java.util.Properties
 
+import org.apache.hadoop.conf.Configuration
+import org.apache.hadoop.fs.LocalFileSystem
+import org.apache.hadoop.hdfs.DistributedFileSystem
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -30,6 +33,10 @@ object DBpediaImporter {
 
 
   def main(args: Array[String]) {
+
+    val conf = new Configuration
+    conf.set("fs.hdfs.impl", classOf[DistributedFileSystem].getName)
+    conf.set("fs.file.impl", classOf[LocalFileSystem].getName)
 
     // Import the page nodes and link graph
     val pageIndex: collection.Map[String, Long] = importPageNodesAndLinks()
