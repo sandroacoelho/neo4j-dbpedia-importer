@@ -28,6 +28,8 @@ object DBpediaImporter {
     .set("driver-memory", prop.getProperty("driver.memory"))
     .set("spark.executor.memory", prop.getProperty("spark.executor.memory"))
     .set("spark.driver.memory", prop.getProperty("spark.driver.memory"))
+    .set("fs.hdfs.impl", classOf[org.apache.hadoop.hdfs.DistributedFileSystem].getName)
+    .set("fs.file.impl", classOf[org.apache.hadoop.fs.LocalFileSystem].getName)
 
   val sc = new SparkContext(conf)
 
