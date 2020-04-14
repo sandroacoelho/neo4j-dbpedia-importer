@@ -1,11 +1,6 @@
-package org.dbpedia.neo4j
-
 import java.net.URLDecoder
 import java.util.Properties
 
-import org.apache.hadoop.conf.Configuration
-import org.apache.hadoop.fs.LocalFileSystem
-import org.apache.hadoop.hdfs.DistributedFileSystem
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 

@@ -1,5 +1,3 @@
-package org.dbpedia.neo4j
-
 import java.util.Properties
 
 /**
