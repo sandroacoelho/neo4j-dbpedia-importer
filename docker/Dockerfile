@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y software-properties-common net-tools
 RUN apt-get install -y openssh-server zookeeperd git maven
 
 # Download Hadoop
-RUN wget -q 'http://apache.forsale.plus/hadoop/common/hadoop-2.2.0/hadoop-2.2.0.tar.gz'
+RUN wget -q 'https://archive.apache.org/dist/hadoop/core/hadoop-2.2.0/hadoop-2.2.0.tar.gz'
 
 # Install util packages
 RUN apt-get install -y rsync curl
