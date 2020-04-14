@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y software-properties-common net-tools
 RUN apt-get install -y openssh-server zookeeperd git maven
 
 # Download Hadoop
-RUN wget -q 'http://apache.forsale.plus/hadoop/common/hadoop-2.10.0/hadoop-2.10.0.tar.gz'
+RUN wget -q 'http://apache.forsale.plus/hadoop/common/hadoop-2.2.0/hadoop-2.2.0.tar.gz'
 
 # Install util packages
 RUN apt-get install -y rsync curl
@@ -29,11 +29,11 @@ RUN chmod 600 /home/hduser/.ssh/config
 RUN sed -ri 's/session[[:blank:]]+required[[:blank:]]+pam_loginuid.so/session optional pam_loginuid.so/g' /etc/pam.d/sshd
 
 # Deploy and setup file permissions
-RUN tar xvfz /root/hadoop-2.10.0.tar.gz -C /opt && \
-  ln -s /opt/hadoop-2.10.0 /opt/hadoop && \
-  chown -R root:root /opt/hadoop-2.10.0 && \
-  mkdir /opt/hadoop-2.10.0/logs && \
-  chown -R hduser:hadoop /opt/hadoop-2.10.0/logs
+RUN tar xvfz /root/hadoop-2.2.0.tar.gz -C /opt && \
+  ln -s /opt/hadoop-2.2.0 /opt/hadoop && \
+  chown -R root:root /opt/hadoop-2.2.0 && \
+  mkdir /opt/hadoop-2.2.0/logs && \
+  chown -R hduser:hadoop /opt/hadoop-2.2.0/logs
 
 # Setup hduser environment
 ADD config/bashrc /home/hduser/.bashrc
