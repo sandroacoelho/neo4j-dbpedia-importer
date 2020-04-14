@@ -1,5 +1,3 @@
-import java.util.Properties
-
 /**
  * Copyright (C) 2014 Kenny Bastani
  *
@@ -15,10 +13,7 @@ import java.util.Properties
  */
 object Configuration {
 
-  val prop = new Properties()
-  prop.load(getClass.getResourceAsStream("/importer.properties"))
-
-  def HDFS_HOST: String = "hdfs://".concat(prop.getProperty("hadoop.hdfs.host")).concat("/")
+  def HDFS_HOST: String = "hdfs://localhost:9000/"
 
   def PRIMARY_TOPIC_URL: String = "<http://xmlns.com/foaf/0.1/primaryTopic>"
 
