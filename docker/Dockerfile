@@ -12,6 +12,8 @@ RUN apt-get install -y openssh-server zookeeperd git maven
 # Download Hadoop
 RUN wget -q 'http://apache.forsale.plus/hadoop/common/hadoop-2.10.0/hadoop-2.10.0.tar.gz'
 
+RUN wget -q 'https://piccolo.link/sbt-1.3.9.tgz'
+
 # Install util packages
 RUN apt-get install -y rsync curl
 
@@ -34,6 +36,9 @@ RUN tar xvfz /root/hadoop-2.10.0.tar.gz -C /opt && \
   chown -R root:root /opt/hadoop-2.10.0 && \
   mkdir /opt/hadoop-2.10.0/logs && \
   chown -R hduser:hadoop /opt/hadoop-2.10.0/logs
+
+
+RUN tar xvfz /root/sbt-1.3.9.tgz -C /opt
 
 # Setup hduser environment
 ADD config/bashrc /home/hduser/.bashrc
